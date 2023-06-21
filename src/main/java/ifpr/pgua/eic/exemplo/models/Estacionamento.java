@@ -29,33 +29,41 @@ public class Estacionamento
     }
 
 
-    public String getNome() {
+    public String getNome() 
+    {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(String nome) 
+    {
         this.nome = nome;
     }
 
-    public String getTelefone() {
+    public String getTelefone() 
+    {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
+    public void setTelefone(String telefone) 
+    {
         this.telefone = telefone;
     }
 
-    public ArrayList<Veiculo> listaTodosVeiculos(){
+    public ArrayList<Veiculo> listaTodosVeiculos()
+    {
         return veiculos;
     }
 
-    public ArrayList<Veiculo> listaVeiculosEstacionados(){
+    public ArrayList<Veiculo> listaVeiculosEstacionados()
+    {
         return new ArrayList<>(veiculos.stream().filter(veiculo -> veiculo.isEstaEstacionado()).collect(Collectors.toList()));
     }
 
-    public Veiculo buscarVeiculo(String placa){
+    public Veiculo buscarVeiculo(String placa)
+    {
         for(Veiculo veiculo:veiculos){
-            if(veiculo.getPlaca().equals(placa)){
+            if(veiculo.getPlaca().equals(placa))
+            {
                 return veiculo;
             }
         }
@@ -63,11 +71,13 @@ public class Estacionamento
     }
 
     /*Recebe o inicio de uma placa e retorna todos os veículos com aquele início de placa */
-    public List<Veiculo> filtrarVeiculosPlaca(String inicioPlaca){
+    public List<Veiculo> filtrarVeiculosPlaca(String inicioPlaca)
+    {
         return veiculos.stream().filter(veiculo -> veiculo.getPlaca().startsWith(inicioPlaca)).collect(Collectors.toList());
     }
 
-    public boolean cadastraVeiculo(String placa, String modelo, String fabricante, String cor, int anoFabricacao){
+    public boolean cadastraVeiculo(String placa, String modelo, String fabricante, String cor, int anoFabricacao)
+    {
         if(buscarVeiculo(placa)==null){
             Veiculo veiculo = new Veiculo(placa, modelo, fabricante, anoFabricacao, cor);
 
@@ -81,18 +91,22 @@ public class Estacionamento
     }
 
 
-    public boolean registraEntrada(String placa){
+    public boolean registraEntrada(String placa)
+    {
         Veiculo veiculo = buscarVeiculo(placa);
-        if(veiculo != null && !veiculo.isEstaEstacionado()){
+        if(veiculo != null && !veiculo.isEstaEstacionado())
+        {
             veiculo.registraEntrada();
             return true;
         }
         return false;
     }
 
-    public boolean registraSaida(String placa){
+    public boolean registraSaida(String placa)
+    {
         Veiculo veiculo = buscarVeiculo(placa);
-        if(veiculo != null && veiculo.isEstaEstacionado()){
+        if(veiculo != null && veiculo.isEstaEstacionado())
+        {
             
             veiculo.registraSaida();
 
@@ -101,7 +115,8 @@ public class Estacionamento
         return false;
     }
 
-    public void cadastraVeiculo(String placa, String modelo, String fabricante, int ano, String cor) {
+    public void cadastraVeiculo(String placa, String modelo, String fabricante, int ano, String cor) 
+    {
     }
 
 

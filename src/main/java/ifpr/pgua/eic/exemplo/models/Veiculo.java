@@ -1,7 +1,8 @@
 package ifpr.pgua.eic.exemplo.models;
 
 
-public class Veiculo {
+public class Veiculo 
+{
     private String placa;
     private String modelo;
     private String fabricante;
@@ -10,12 +11,14 @@ public class Veiculo {
     private boolean estaEstacionado;
 
 
-    public boolean isEstaEstacionado() {
+    public boolean isEstaEstacionado() 
+    {
         return estaEstacionado;
     }
 
 
-    public Veiculo(String placa, String modelo, String fabricante, int anoFabricacao, String cor) {
+    public Veiculo(String placa, String modelo, String fabricante, int anoFabricacao, String cor) 
+    {
         this.placa = placa;
         this.modelo = modelo;
         this.fabricante = fabricante;
@@ -25,32 +28,38 @@ public class Veiculo {
     }
 
 
-    public String getPlaca() {
+    public String getPlaca() 
+    {
         return placa;
     }
 
 
-    public void setPlaca(String placa) {
+    public void setPlaca(String placa) 
+    {
         this.placa = placa;
     }
 
 
-    public String getModelo() {
+    public String getModelo() 
+    {
         return modelo;
     }
 
 
-    public void setModelo(String modelo) {
+    public void setModelo(String modelo) 
+    {
         this.modelo = modelo;
     }
 
 
-    public String getFabricante() {
+    public String getFabricante() 
+    {
         return fabricante;
     }
 
 
-    public void setFabricante(String fabricante) {
+    public void setFabricante(String fabricante) 
+    {
         this.fabricante = fabricante;
     }
 
@@ -60,21 +69,25 @@ public class Veiculo {
     }
 
 
-    public void setAnoFabricacao(int anoFabricacao) {
+    public void setAnoFabricacao(int anoFabricacao) 
+    {
         this.anoFabricacao = anoFabricacao;
     }
 
 
-    public String getCor() {
+    public String getCor() 
+    {
         return cor;
     }
 
 
-    public void setCor(String cor) {
+    public void setCor(String cor) 
+    {
         this.cor = cor;
     }
 
-    public boolean registraEntrada(){
+    public boolean registraEntrada()
+    {
         if(!estaEstacionado){
             this.estaEstacionado = true;
 
@@ -83,12 +96,18 @@ public class Veiculo {
         return false;
     }
 
-    public boolean registraSaida(){
+    public boolean registraSaida()
+    {
         if(estaEstacionado){
             this.estaEstacionado = false;
             return true;
         }
         return false;
+    }
+
+    public String toString()
+    {
+        return placa;
     }
     
 }
